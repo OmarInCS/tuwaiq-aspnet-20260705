@@ -30,6 +30,14 @@ namespace EFCore.ClinicModels {
                 .HasMany(d => d.Doctors)
                 .WithMany(s => s.Specialities)
                 .UsingEntity<DoctorSpeciality>();
+
+            modelBuilder.Entity<Doctor>()
+                .HasData([
+                    new Doctor {Id =1, Name= "Ahmed", Salary=20000},
+                    new Doctor {Id=2, Name= "Wael", Salary=10000},
+                    new Doctor {Id=3, Name= "Fahad", Salary=25000},
+                    ]);
+
         }
     }
 }

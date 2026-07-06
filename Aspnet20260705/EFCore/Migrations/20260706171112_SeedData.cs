@@ -1,11 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
+
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
 namespace EFCore.Migrations
 {
     /// <inheritdoc />
-    public partial class SpecialitiesTable : Migration
+    public partial class SeedData : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -47,6 +50,16 @@ namespace EFCore.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Doctors",
+                columns: new[] { "Id", "HireDate", "Name", "Salary" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Ahmed", 20000.0 },
+                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Wael", 10000.0 },
+                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Fahad", 25000.0 }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_DoctorSpecialities_SpecialityId",
                 table: "DoctorSpecialities",
@@ -61,6 +74,21 @@ namespace EFCore.Migrations
 
             migrationBuilder.DropTable(
                 name: "Specialities");
+
+            migrationBuilder.DeleteData(
+                table: "Doctors",
+                keyColumn: "Id",
+                keyValue: 1);
+
+            migrationBuilder.DeleteData(
+                table: "Doctors",
+                keyColumn: "Id",
+                keyValue: 2);
+
+            migrationBuilder.DeleteData(
+                table: "Doctors",
+                keyColumn: "Id",
+                keyValue: 3);
         }
     }
 }

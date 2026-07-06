@@ -70,6 +70,29 @@ namespace EFCore.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Doctors");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            HireDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Ahmed",
+                            Salary = 20000.0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            HireDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Wael",
+                            Salary = 10000.0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            HireDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Fahad",
+                            Salary = 25000.0
+                        });
                 });
 
             modelBuilder.Entity("EFCore.ClinicModels.DoctorSpeciality", b =>
