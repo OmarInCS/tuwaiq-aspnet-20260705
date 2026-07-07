@@ -12,5 +12,23 @@ namespace ClinicApp.Controllers {
             var doctor = Data.Doctors.Single(d => d.Id == id);
             return View(doctor);
         }
+
+
+        public IActionResult Add() {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Add(Doctor doctor) {
+
+            if (!ModelState.IsValid) {
+                return View(doctor);
+            }
+
+            doctor.Id = Data.Doctors.Max(d => d.Id) + 1;
+            Data.Doctors.Add(doctor);
+
+            return RedirectToAction(nameof(Details), new {doctor.Id});
+        }
     }
 }

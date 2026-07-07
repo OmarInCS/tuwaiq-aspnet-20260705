@@ -16,10 +16,11 @@ namespace ClinicApp.Models {
 
         public DateTime HireDate { get; set; }
 
+        [Range(0, 100_000)]
         public double Salary { get; set; }
 
 
-        public List<Appointment> Appointments { get; set; } = null!;
-        public List<Speciality> Specialities { get; set; } = null!;
+        public List<Appointment> Appointments { get; set; } = new();
+        public List<Speciality> Specialities { get; set; } = new();
     }
 }

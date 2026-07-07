@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Private/Tuwaiq/tuwaiq-aspnet-20260705/Aspnet20260705/ClinicApp/Views/Doctor/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Private/Tuwaiq/tuwaiq-aspnet-20260705/Aspnet20260705/ClinicApp/Views/Doctor/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
