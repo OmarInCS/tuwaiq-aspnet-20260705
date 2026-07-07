@@ -76,6 +76,7 @@ foreach (var doctor in doctorBelow30)
 
 
 var docApptCount = db.Appointments
+    .AsNoTracking()
     .Include(d => d.Doctor)
     .GroupBy(d => d.Doctor.Name)
     .Select(d => new {
