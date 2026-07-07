@@ -28,6 +28,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Doctor" asp-action="Index">Doctors</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -35,7 +38,14 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
-            @RenderBody()
+            <div class="card">
+                <div class="card-header">
+                    @ViewData["Title"]
+                </div>
+                <div class="card-body">
+                    @RenderBody()
+                </div>
+            </div>
         </main>
     </div>
 

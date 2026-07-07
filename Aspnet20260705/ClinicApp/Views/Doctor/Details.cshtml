@@ -1,0 +1,16 @@
+﻿@model Doctor
+
+@{
+    ViewData["Title"] = $"Doctor #{Model.Id} Details";
+}
+
+<h3>
+    @Model.Name
+</h3>
+<h6>
+    @Model.HireDate.ToShortDateString()
+</h6>
+<h6>
+    SAR @Model.Salary
+</h6>
+
