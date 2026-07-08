@@ -30,5 +30,12 @@ namespace ClinicApp.Controllers {
 
             return RedirectToAction(nameof(Details), new {doctor.Id});
         }
+
+        public IActionResult Delete(int id) {
+            var doctor = Data.Doctors.Single(d => d.Id == id);
+            Data.Doctors.Remove(doctor);
+
+            return NoContent();
+        }
     }
 }
