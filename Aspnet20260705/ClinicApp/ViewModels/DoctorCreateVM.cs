@@ -1,4 +1,5 @@
-﻿using ClinicApp.ViewModels;
+﻿using ClinicApp.Helpers;
+using ClinicApp.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -7,30 +8,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClinicApp.Models {
-    public class Doctor {
+namespace ClinicApp.ViewModels {
+    public class DoctorCreateVM {
         
-        public int Id { get; set; }
-
         [MaxLength(100)]
         public string Name { get; set; }
 
-        public DateTime HireDate { get; set; }
+        [NotFutureDate(ErrorMessage = "Hiredate can't be a furture date")]
+        public DateTime HireDate { get; set; } = DateTime.Now;
 
         [Range(0, 100_000)]
         public double Salary { get; set; }
 
 
-        public List<Appointment> Appointments { get; set; } = new();
-        public List<Speciality> Specialities { get; set; } = new();
-
-
-        public DoctorReadVM ToDoctorReadVM() {
-            return new DoctorReadVM {
-                Id = Id,
+        public Doctor ToDoctor() {
+            return new Doctor {
                 Name = Name,
                 HireDate = HireDate,
-                Salary = Salary,
+                Salary = Salary
             };
         }
     }
