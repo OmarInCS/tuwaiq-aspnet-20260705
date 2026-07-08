@@ -28,6 +28,10 @@
                 <td>@d.HireDate.ToShortDateString()</td>
                 <td>SAR @d.Salary</td>
                 <td>
+                    <a class="btn btn-sm btn-secondary" asp-action="Update" asp-route-id="@d.Id">
+                        <i class="bi bi-pencil-square"></i>
+                        Update
+                    </a>
                     <button class="btn btn-sm btn-danger btn-js-delete" data-id="@d.Id">
                         <i class="bi bi-trash3-fill"></i>
                         Delete

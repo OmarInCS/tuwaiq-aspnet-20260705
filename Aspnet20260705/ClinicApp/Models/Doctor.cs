@@ -17,7 +17,6 @@ namespace ClinicApp.Models {
 
         public DateTime HireDate { get; set; }
 
-        [Range(0, 100_000)]
         public double Salary { get; set; }
 
 
@@ -28,6 +27,14 @@ namespace ClinicApp.Models {
         public DoctorReadVM ToDoctorReadVM() {
             return new DoctorReadVM {
                 Id = Id,
+                Name = Name,
+                HireDate = HireDate,
+                Salary = Salary,
+            };
+        }
+
+        public DoctorUpdateVM ToDoctorUpdateVM() {
+            return new DoctorUpdateVM {
                 Name = Name,
                 HireDate = HireDate,
                 Salary = Salary,

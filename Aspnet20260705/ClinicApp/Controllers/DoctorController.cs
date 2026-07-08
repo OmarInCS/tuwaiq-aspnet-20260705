@@ -20,6 +20,7 @@ namespace ClinicApp.Controllers {
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Add(DoctorCreateVM vm) {
 
             if (!ModelState.IsValid) {
@@ -38,6 +39,25 @@ namespace ClinicApp.Controllers {
             Data.Doctors.Remove(doctor);
 
             return NoContent();
+        }
+
+        public IActionResult Update(int id) {
+            var doctor = Data.Doctors.Single(d => d.Id == id).ToDoctorUpdateVM();
+            return View(doctor);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Update(int id, DoctorUpdateVM vm) {
+
+            if (!ModelState.IsValid) {
+                return View(vm);
+            }
+
+            var doctor = Data.Doctors.Single(d => d.Id == id);
+            vm.ToDoctor(doctor);
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }

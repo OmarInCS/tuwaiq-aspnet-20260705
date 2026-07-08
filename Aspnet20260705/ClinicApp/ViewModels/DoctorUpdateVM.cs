@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ClinicApp.ViewModels {
-    public class DoctorCreateVM {
+    public class DoctorUpdateVM {
         
         [MaxLength(100)]
         public string Name { get; set; }
@@ -22,12 +22,10 @@ namespace ClinicApp.ViewModels {
         public double Salary { get; set; }
 
 
-        public Doctor ToDoctor() {
-            return new Doctor {
-                Name = Name,
-                HireDate = HireDate,
-                Salary = Salary
-            };
+        public void ToDoctor(Doctor doctor) {
+            doctor.Name = Name;
+            doctor.HireDate = HireDate;
+            doctor.Salary = Salary;
         }
     }
 }
