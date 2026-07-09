@@ -4,13 +4,22 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ClinicApp.Controllers {
     public class DoctorController : Controller {
+
+        private readonly ClinicContext _db;
+
+        public DoctorController(ClinicContext db)
+        {
+            _db = db;
+        }
+
+
         public IActionResult Index() {
-            var doctors = Data.Doctors.Select(d => d.ToDoctorReadVM()).ToList();
+            var doctors = _db.Doctors.Select(d => d.ToDoctorReadVM()).ToList();
             return View(doctors);
         }
 
         public IActionResult Details(int id) {
-            var doctor = Data.Doctors.Single(d => d.Id == id).ToDoctorReadVM();
+            var doctor = _db.Doctors.Single(d => d.Id == id).ToDoctorReadVM();
             return View(doctor);
         }
 
@@ -28,21 +37,22 @@ namespace ClinicApp.Controllers {
             }
 
             var doctor = vm.ToDoctor();
-            doctor.Id = Data.Doctors.Max(d => d.Id) + 1;
-            Data.Doctors.Add(doctor);
+            _db.Doctors.Add(doctor);
+            _db.SaveChanges();
 
             return RedirectToAction(nameof(Details), new {doctor.Id});
         }
 
         public IActionResult Delete(int id) {
-            var doctor = Data.Doctors.Single(d => d.Id == id);
-            Data.Doctors.Remove(doctor);
+            var doctor = _db.Doctors.Single(d => d.Id == id);
+            _db.Doctors.Remove(doctor);
+            _db.SaveChanges();
 
             return NoContent();
         }
 
         public IActionResult Update(int id) {
-            var doctor = Data.Doctors.Single(d => d.Id == id).ToDoctorUpdateVM();
+            var doctor = _db.Doctors.Single(d => d.Id == id).ToDoctorUpdateVM();
             return View(doctor);
         }
 
@@ -54,8 +64,9 @@ namespace ClinicApp.Controllers {
                 return View(vm);
             }
 
-            var doctor = Data.Doctors.Single(d => d.Id == id);
+            var doctor = _db.Doctors.Single(d => d.Id == id);
             vm.ToDoctor(doctor);
+            _db.SaveChanges();
 
             return RedirectToAction(nameof(Index));
         }
