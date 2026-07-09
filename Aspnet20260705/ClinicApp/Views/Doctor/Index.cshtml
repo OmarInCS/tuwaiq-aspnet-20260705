@@ -9,41 +9,7 @@
     Add
 </a>
 
-<form>
-    <div class="row g-3">
-        <div class="col-sm-7">
-            <div class="form-floating mb-3">
-                <input asp-for="Filter.Name" class="form-control" />
-                <label asp-for="Filter.Name"></label>
-                <span asp-validation-for="Filter.Name" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-floating mb-3">
-                <input asp-for="Filter.Id" class="form-control" type="text" />
-                <label asp-for="Filter.Id"></label>
-                <span asp-validation-for="Filter.Id" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-floating mb-3">
-                <input asp-for="Filter.HireDateStart" class="form-control" type="date"/>
-                <label asp-for="Filter.HireDateStart"></label>
-                <span asp-validation-for="Filter.HireDateStart" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="form-floating mb-3">
-                <input asp-for="Filter.HireDateEnd" class="form-control" type="date" />
-                <label asp-for="Filter.HireDateEnd"></label>
-                <span asp-validation-for="Filter.HireDateEnd" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="col-sm">
-            <button type="submit" class="btn btn-primary">Search</button>
-        </div>
-    </div>
-</form>
+<partial name="_Filter" model="@Model.Filter" />
 
 <table class="table">
     <thead>

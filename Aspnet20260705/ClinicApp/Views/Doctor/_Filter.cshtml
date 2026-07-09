@@ -1,0 +1,38 @@
+﻿@model DoctorFilterVM
+
+
+<form>
+    <div class="row g-3">
+        <div class="col-sm-7">
+            <div class="form-floating mb-3">
+                <input asp-for="Name" class="form-control" />
+                <label asp-for="Name"></label>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-floating mb-3">
+                <input asp-for="Id" class="form-control" type="text" />
+                <label asp-for="Id"></label>
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-floating mb-3">
+                <input asp-for="HireDateStart" class="form-control" type="date" />
+                <label asp-for="HireDateStart"></label>
+                <span asp-validation-for="HireDateStart" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-floating mb-3">
+                <input asp-for="HireDateEnd" class="form-control" type="date" />
+                <label asp-for="HireDateEnd"></label>
+                <span asp-validation-for="HireDateEnd" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-sm">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </div>
+</form>
