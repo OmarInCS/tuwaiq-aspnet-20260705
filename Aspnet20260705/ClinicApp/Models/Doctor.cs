@@ -30,6 +30,7 @@ namespace ClinicApp.Models {
                 Name = Name,
                 HireDate = HireDate,
                 Salary = Salary,
+                Specialities = Specialities.Select(s => s.ToSpecialityReadVM()).ToList(),
             };
         }
 

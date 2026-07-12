@@ -13,4 +13,13 @@
 <h6>
     SAR @Model.Salary
 </h6>
+<h6>
+    Specialities:
+    <ul>
+        @foreach (var speciality in Model.Specialities)
+        {
+            <li>@speciality.Name</li>
+        }
+    </ul>
+</h6>
 

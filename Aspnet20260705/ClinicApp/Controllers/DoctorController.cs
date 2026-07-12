@@ -1,6 +1,7 @@
 ﻿using ClinicApp.Models;
 using ClinicApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ClinicApp.Controllers {
     public class DoctorController : Controller {
@@ -16,6 +17,7 @@ namespace ClinicApp.Controllers {
         public IActionResult Index(DoctorFilterVM vm) {
 
             var initQuery = _db.Doctors
+                .Include(d => d.Specialities)
                 .Where(d => vm.Id == null || d.Id == vm.Id)
                 .Where(d => vm.Name == null || d.Name.Contains(vm.Name))
                 .Where(d => vm.HireDateStart == null || d.HireDate >= vm.HireDateStart)
@@ -34,7 +36,10 @@ namespace ClinicApp.Controllers {
         }
 
         public IActionResult Details(int id) {
-            var doctor = _db.Doctors.Single(d => d.Id == id).ToDoctorReadVM();
+            var doctor = _db.Doctors
+                .Include(d => d.Specialities)
+                .Single(d => d.Id == id)
+                .ToDoctorReadVM();
             return View(doctor);
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClinicApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,5 +13,10 @@ namespace ClinicApp.Models {
 
 
         public List<Doctor> Doctors { get; set; } = null!;
+
+
+        public SpecialityReadVM ToSpecialityReadVM() {
+            return new SpecialityReadVM { Id = Id, Name = Name, };
+        }
     }
 }
