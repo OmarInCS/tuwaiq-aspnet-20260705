@@ -83,7 +83,13 @@ namespace ClinicApp.Controllers {
         }
 
         public IActionResult Update(int id) {
-            var doctor = _db.Doctors.Single(d => d.Id == id).ToDoctorUpdateVM();
+            var doctor = _db.Doctors
+                .Include(d => d.Specialities)
+                .Single(d => d.Id == id).ToDoctorUpdateVM();
+            doctor.AllSpecialities = _db.Specialities
+                .Select(s => s.ToSpecialityReadVM())
+                .ToList();
+
             return View(doctor);
         }
 
@@ -92,11 +98,16 @@ namespace ClinicApp.Controllers {
         public IActionResult Update(int id, DoctorUpdateVM vm) {
 
             if (!ModelState.IsValid) {
+                vm.AllSpecialities = _db.Specialities
+                    .Select(s => s.ToSpecialityReadVM()).ToList();
                 return View(vm);
             }
 
-            var doctor = _db.Doctors.Single(d => d.Id == id);
+            var doctor = _db.Doctors.Include(d => d.Specialities).Single(d => d.Id == id);
             vm.ToDoctor(doctor);
+            doctor.Specialities = _db.Specialities.
+                Where(s => vm.SelectedSpecialityIds.Contains(s.Id))
+                .ToList();
             _db.SaveChanges();
 
             return RedirectToAction(nameof(Index));

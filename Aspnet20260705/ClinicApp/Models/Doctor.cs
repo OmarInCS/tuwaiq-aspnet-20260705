@@ -39,6 +39,7 @@ namespace ClinicApp.Models {
                 Name = Name,
                 HireDate = HireDate,
                 Salary = Salary,
+                SelectedSpecialityIds = Specialities.Select(s => s.Id).ToList(),
             };
         }
     }
