@@ -45,6 +45,8 @@
     </tbody>
 </table>
 
+<partial name="_Pagination" model="@Model.Filter" />
+
 @section Scripts {
     <script>
         $(".btn-js-delete").on("click", function() {
@@ -62,6 +64,13 @@
                     }
                 });
             }
+        });
+
+
+        $(".js-page-link").on("click", function () {
+            const page = $(this).data("page");
+            $("#doctor-filter-form #Page").val(page);
+            $("#doctor-filter-form").submit();
         });
     </script>
 }

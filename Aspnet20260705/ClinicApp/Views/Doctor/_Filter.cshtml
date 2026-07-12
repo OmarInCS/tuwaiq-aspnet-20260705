@@ -1,7 +1,7 @@
 ﻿@model DoctorFilterVM
 
 
-<form>
+<form id="doctor-filter-form">
     <div class="row g-3">
         <div class="col-sm-7">
             <div class="form-floating mb-3">
@@ -31,6 +31,9 @@
                 <span asp-validation-for="HireDateEnd" class="text-danger"></span>
             </div>
         </div>
+
+        <input asp-for="Page" class="visually-hidden" />
+
         <div class="col-sm">
             <button type="submit" class="btn btn-primary">Search</button>
         </div>

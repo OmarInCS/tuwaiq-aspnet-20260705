@@ -1,0 +1,22 @@
+﻿@model DoctorFilterVM
+
+
+<nav aria-label="...">
+    <ul class="pagination">
+        <li class="page-item @(Model.Page == 1 ? "disabled" : "")">
+            <button class="page-link js-page-link" data-page="@(Model.Page - 1)">Previous</button>
+        </li>
+        
+        @for(int i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(Model.Page == i ? "active" : "")">
+                <button class="page-link js-page-link" data-page="@i" aria-current="page">@i</button>
+            </li>
+        }
+        
+        <li class="page-item @(Model.Page == Model.TotalPages ? "disabled" : "")">
+            <button class="page-link js-page-link" data-page="@(Model.Page + 1)">Next</button>
+        </li>
+    </ul>
+</nav>
+
