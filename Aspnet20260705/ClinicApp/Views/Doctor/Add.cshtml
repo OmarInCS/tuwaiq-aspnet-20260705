@@ -20,6 +20,14 @@
         <label asp-for="Salary"></label>
         <span asp-validation-for="Salary" class="text-danger"></span>
     </div>
+    <div class="form-floating mb-3">
+        <select asp-for="SelectedSpecialityIds" class="form-select"
+            style="height: 150px;"
+            asp-items="@(new MultiSelectList(Model.AllSpecialities, "Id", "Name"))">
+        </select>
+        <label asp-for="SelectedSpecialityIds"></label>
+        <span asp-validation-for="SelectedSpecialityIds" class="text-danger"></span>
+    </div>
 
     <button class="btn btn-primary" type="submit">Save</button>
 </form>

@@ -21,6 +21,10 @@ namespace ClinicApp.ViewModels {
         [Range(0, 100_000)]
         public double Salary { get; set; }
 
+        public List<int> SelectedSpecialityIds { get; set; } = new();
+
+        public List<SpecialityReadVM> AllSpecialities { get; set; } = new();
+
 
         public Doctor ToDoctor() {
             return new Doctor {

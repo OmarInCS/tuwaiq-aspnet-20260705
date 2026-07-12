@@ -45,7 +45,12 @@ namespace ClinicApp.Controllers {
 
 
         public IActionResult Add() {
-            return View();
+            var vm = new DoctorCreateVM();
+            vm.AllSpecialities = _db.Specialities
+                .Select( s => s.ToSpecialityReadVM())
+                .ToList();
+
+            return View(vm);
         }
 
         [HttpPost]
@@ -53,10 +58,16 @@ namespace ClinicApp.Controllers {
         public IActionResult Add(DoctorCreateVM vm) {
 
             if (!ModelState.IsValid) {
+                vm.AllSpecialities = _db.Specialities
+                            .Select(s => s.ToSpecialityReadVM())
+                            .ToList();
                 return View(vm);
             }
 
             var doctor = vm.ToDoctor();
+            doctor.Specialities = _db.Specialities
+                .Where(s => vm.SelectedSpecialityIds.Contains(s.Id))
+                .ToList();
             _db.Doctors.Add(doctor);
             _db.SaveChanges();
 
