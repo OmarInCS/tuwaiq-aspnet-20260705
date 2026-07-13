@@ -1,5 +1,6 @@
 using ClinicApp.Helpers;
 using ClinicApp.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 var connStr = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ClinicContext>(options => options.UseSqlServer(connStr));
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => {
+    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequiredLength = 12;
+}).AddEntityFrameworkStores<ClinicContext>()
+.AddDefaultTokenProviders();
+
 
 //builder.Services.AddSingleton<SomeService>();
 builder.Services.AddScoped<SomeService>();
@@ -30,6 +38,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

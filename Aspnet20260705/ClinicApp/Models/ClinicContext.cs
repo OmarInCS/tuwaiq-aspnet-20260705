@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ClinicApp.Models {
-    public class ClinicContext : DbContext {
+    public class ClinicContext : IdentityDbContext {
 
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
@@ -19,6 +21,25 @@ namespace ClinicApp.Models {
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
             base.OnModelCreating(modelBuilder);
+
+
+            //        where TUser : IdentityUser<TKey>
+            //where TRole : IdentityRole<TKey>
+            //where TKey : IEquatable<TKey>
+            //where TUserClaim : IdentityUserClaim<TKey>
+            //where TUserRole : IdentityUserRole<TKey>
+            //where TUserLogin : IdentityUserLogin<TKey>
+            //where TRoleClaim : IdentityRoleClaim<TKey>
+            //where TUserToken : IdentityUserToken<TKey>
+
+            modelBuilder.Entity<IdentityUser>().ToTable("Users", "auth");
+            modelBuilder.Entity<IdentityRole>().ToTable("Roles", "auth");
+            modelBuilder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims", "auth");
+            modelBuilder.Entity<IdentityUserRole<string>>().ToTable("UserRoles", "auth");
+            modelBuilder.Entity<IdentityUserLogin<string>>().ToTable("UserLogins", "auth");
+            modelBuilder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims", "auth");
+            modelBuilder.Entity<IdentityUserToken<string>>().ToTable("UserTokens", "auth");
+
 
             modelBuilder.Entity<Appointment>()
                 .Property(a => a.AllocationDate)

@@ -1,4 +1,5 @@
 ﻿using ClinicApp.ViewModels;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -19,9 +20,12 @@ namespace ClinicApp.Models {
 
         public double Salary { get; set; }
 
+        public string? UserId { get; set; }
+
 
         public List<Appointment> Appointments { get; set; } = new();
         public List<Speciality> Specialities { get; set; } = new();
+        public IdentityUser? User { get; set; }
 
 
         public DoctorReadVM ToDoctorReadVM() {
