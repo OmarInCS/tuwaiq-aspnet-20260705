@@ -15,6 +15,11 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => {
 }).AddEntityFrameworkStores<ClinicContext>()
 .AddDefaultTokenProviders();
 
+builder.Services.ConfigureApplicationCookie(options => {
+    options.LoginPath = "/Auth/Login";
+    options.AccessDeniedPath = "/Auth/AccessDenied";
+});
+
 
 //builder.Services.AddSingleton<SomeService>();
 builder.Services.AddScoped<SomeService>();
@@ -44,5 +49,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+await AdminSeeder.SeedAdmin(app);
 
 app.Run();
