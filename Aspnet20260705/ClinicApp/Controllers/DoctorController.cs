@@ -1,4 +1,5 @@
-﻿using ClinicApp.Models;
+﻿using ClinicApp.Helpers;
+using ClinicApp.Models;
 using ClinicApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -7,10 +8,13 @@ namespace ClinicApp.Controllers {
     public class DoctorController : Controller {
 
         private readonly ClinicContext _db;
+        private readonly SomeService _someService;
 
-        public DoctorController(ClinicContext db)
+
+        public DoctorController(ClinicContext db, SomeService someService, OtherService otherService)
         {
             _db = db;
+            _someService = someService;
         }
 
 
