@@ -25,7 +25,7 @@ namespace ClinicApp.Models {
 
         public List<Appointment> Appointments { get; set; } = new();
         public List<Speciality> Specialities { get; set; } = new();
-        public IdentityUser? User { get; set; }
+        public AppUser? User { get; set; }
 
 
         public DoctorReadVM ToDoctorReadVM() {

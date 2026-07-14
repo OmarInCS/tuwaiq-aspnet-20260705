@@ -1,18 +1,19 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using ClinicApp.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace ClinicApp.Helpers {
     public class AdminSeeder {
 
         public static async Task SeedAdmin(WebApplication app) {
             var scope = app.Services.CreateScope();
-            var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+            var userManager = scope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
 
 
             var admin = await userManager.FindByEmailAsync("admin@clinic.com");
 
             if (admin != null) return;
 
-            admin = new IdentityUser {
+            admin = new AppUser {
                 Email = "admin@clinic.com",
                 UserName = "admin"
             };

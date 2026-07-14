@@ -17,5 +17,7 @@ namespace ClinicApp.ViewModels {
         [EnumDataType(typeof(AppRoles))]
         public string Role { get; set; } = null!;
 
+        public IFormFile? ProfilePicture { get; set; }
+
     }
 }

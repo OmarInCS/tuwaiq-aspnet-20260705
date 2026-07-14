@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ClinicApp.Models {
-    public class ClinicContext : IdentityDbContext {
+    public class ClinicContext : IdentityDbContext<AppUser> {
 
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
@@ -33,7 +33,7 @@ namespace ClinicApp.Models {
             //where TRoleClaim : IdentityRoleClaim<TKey>
             //where TUserToken : IdentityUserToken<TKey>
 
-            modelBuilder.Entity<IdentityUser>().ToTable("Users", "auth");
+            modelBuilder.Entity<AppUser>().ToTable("Users", "auth");
             modelBuilder.Entity<IdentityRole>().ToTable("Roles", "auth");
             modelBuilder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims", "auth");
             modelBuilder.Entity<IdentityUserRole<string>>().ToTable("UserRoles", "auth");

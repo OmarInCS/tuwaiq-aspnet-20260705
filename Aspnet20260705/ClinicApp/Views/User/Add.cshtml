@@ -4,7 +4,7 @@
     ViewData["Title"] = "Add User";
 }
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     <div class="form-floating mb-3">
         <input asp-for="Email" class="form-control" />
         <label asp-for="Email"></label>
@@ -26,6 +26,11 @@
         </select>
         <label asp-for="Role"></label>
         <span asp-validation-for="Role" class="text-danger"></span>
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="ProfilePicture" class="form-control" type="file" accept="image/*"/>
+        <label asp-for="ProfilePicture"></label>
+        <span asp-validation-for="ProfilePicture" class="text-danger"></span>
     </div>
 
     <button class="btn btn-primary" type="submit">Save</button>
