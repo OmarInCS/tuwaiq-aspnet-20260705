@@ -1,0 +1,36 @@
+﻿@model UserCreateVM
+
+@{
+    ViewData["Title"] = "Add User";
+}
+
+<form method="post">
+    <div class="form-floating mb-3">
+        <input asp-for="Email" class="form-control" />
+        <label asp-for="Email"></label>
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="Password" class="form-control" />
+        <label asp-for="Password"></label>
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="ConfirmPassword" class="form-control" />
+        <label asp-for="ConfirmPassword"></label>
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+    <div class="form-floating mb-3">
+        <select asp-for="Role" class="form-select"
+                asp-items="@(new SelectList(Enum.GetNames<AppRoles>()))">
+        </select>
+        <label asp-for="Role"></label>
+        <span asp-validation-for="Role" class="text-danger"></span>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Save</button>
+</form>
+
+@* @section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+} *@

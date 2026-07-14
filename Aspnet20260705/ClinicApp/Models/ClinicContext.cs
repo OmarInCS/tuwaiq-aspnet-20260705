@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using ClinicApp.Helpers;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -74,6 +75,29 @@ namespace ClinicApp.Models {
                         new DoctorSpeciality { DoctorId = 2, SpecialityId = 2 },
                     ]);
 
+
+            modelBuilder.Entity<IdentityRole>()
+                .HasData([
+                        new IdentityRole {
+                            Id = "0bc2b673-756f-426b-8434-5301c519230f",
+                            Name = AppRoles.APP_ADMIN.ToString(),
+                            NormalizedName = AppRoles.APP_ADMIN.ToString(),
+                            ConcurrencyStamp = "0bc2b673-756f-426b-8434-5301c519230f"
+                        },
+                        new IdentityRole {
+                            Id = "0bc2b673-756f-426b-8435-5301c519230f",
+                            Name = AppRoles.DOCTOR.ToString(),
+                            NormalizedName = AppRoles.DOCTOR.ToString(),
+                            ConcurrencyStamp = "0bc2b673-756f-426b-8435-5301c519230f"
+                        },
+                        new IdentityRole {
+                            Id = "0bc2b673-756f-426b-8436-5301c519230f",
+                            Name = AppRoles.OFFICER.ToString(),
+                            NormalizedName = AppRoles.OFFICER.ToString(),
+                            ConcurrencyStamp = "0bc2b673-756f-426b-8436-5301c519230f"
+                        },
+
+                    ]);
         }
     }
 }

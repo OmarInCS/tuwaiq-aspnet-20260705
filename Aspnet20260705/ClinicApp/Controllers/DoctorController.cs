@@ -2,6 +2,7 @@
 using ClinicApp.Models;
 using ClinicApp.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,7 +23,7 @@ namespace ClinicApp.Controllers {
 
 
         public IActionResult Index(DoctorFilterVM vm) {
-
+            
             var initQuery = _db.Doctors
                 .Include(d => d.Specialities)
                 .Where(d => vm.Id == null || d.Id == vm.Id)

@@ -22,6 +22,12 @@ namespace ClinicApp.Helpers {
             if (!result.Succeeded) {
                 throw new Exception("Can't create admin user");
             }
+
+            result = await userManager.AddToRoleAsync(admin, AppRoles.APP_ADMIN.ToString());
+
+            if (!result.Succeeded) {
+                throw new Exception("Can't assign admin role");
+            }
         }
     }
 }

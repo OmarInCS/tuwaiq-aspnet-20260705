@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XCBX/KZGs+Qu3GqPuJ9msqn6d/rxSbEmcSlcgJnOpYY=",
+  "Hash": "gGcVdRsLa5sddOGjd70UuNLJhMDQezWe14ZXvQo5lP8=",
   "Source": "ClinicApp",
   "BasePath": "_content/ClinicApp",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\Private\\Tuwaiq\\tuwaiq-aspnet-20260705\\Aspnet20260705\\ClinicApp\\wwwroot\\images\\profiles\\default.webp",
+      "SourceId": "ClinicApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Private\\Tuwaiq\\tuwaiq-aspnet-20260705\\Aspnet20260705\\ClinicApp\\wwwroot\\",
+      "BasePath": "_content/ClinicApp",
+      "RelativePath": "images/profiles/default.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\profiles\\default.webp"
     },
     {
       "Identity": "D:\\Private\\Tuwaiq\\tuwaiq-aspnet-20260705\\Aspnet20260705\\ClinicApp\\wwwroot\\js\\site.js",

@@ -9,6 +9,9 @@ D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8
 D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Azure.Core.dll
 D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Azure.Identity.dll
 D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Humanizer.dll
+D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -24,6 +27,8 @@ D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8
 D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
 D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
 D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
 D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
@@ -133,6 +138,7 @@ D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\obj\Debug\net8
 D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ClinicApp.props
 D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ClinicApp.props
 D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\obj\Debug\net8.0\staticwebassets.pack.json
+D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\obj\Debug\net8.0\scopedcss\Views\Shared\_AuthLayout.cshtml.rz.scp.css
 D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\obj\Debug\net8.0\scopedcss\bundle\ClinicApp.styles.css
 D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\obj\Debug\net8.0\scopedcss\projectbundle\ClinicApp.bundle.scp.css
@@ -142,9 +148,3 @@ D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\obj\Debug\net8
 D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\obj\Debug\net8.0\ClinicApp.pdb
 D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\obj\Debug\net8.0\ClinicApp.genruntimeconfig.cache
 D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\obj\Debug\net8.0\ref\ClinicApp.dll
-D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
-D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
-D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
-D:\Private\Tuwaiq\tuwaiq-aspnet-20260705\Aspnet20260705\ClinicApp\obj\Debug\net8.0\scopedcss\Views\Shared\_AuthLayout.cshtml.rz.scp.css
